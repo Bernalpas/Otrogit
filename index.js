@@ -13,19 +13,16 @@ const miMiddeleware = (req, res, next) => {
     next();
 };
 
-
 app.use(miMiddeleware);
-app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(path.join(__dirname + '/public')));
 
 app.get('/', (req, res) => {
     res.sendFile('index.html');
 });
 
 app.get('/ofertas', (req, res) => {
-    res.sendFile('ofertas.html');
+    res.sendFile('ofertas.html', {root: __dirname + '/public'});
 });
-
 
 
 app.listen(PORT, (err) => {
