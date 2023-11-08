@@ -25,6 +25,30 @@ app.get('/ofertas', (req, res) => {
 });
 
 
+
+app.get('/', (req, res) => {
+    res.sendFile('index.html');
+});
+
+app.get('/ofertas', (req, res) => {
+    res.sendFile('ofertas.html', {root: __dirname + '/public'});
+});
+
+
+
+
+app.get('/', (req, res) => {
+    res.sendFile('index.html');
+});
+
+app.get('/ofertas', (req, res) => {
+    res.sendFile('ofertas.html', {root: __dirname + '/public'});
+});
+
+
+
+
+
 app.listen(PORT, (err) => {
     if(err) console.log(err)
     console.log(`Server is running on port http://localhost:${PORT}`);
